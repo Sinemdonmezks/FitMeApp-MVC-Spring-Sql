@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>FitMeApp</title>
+</head>
+<body style="background: linear-gradient( rgb(47, 139, 47),paleturquoise);">
+<header class="text-center p-5 text-white" style="background-color:rgb(47, 139, 47);">
+    <h1 style="font-family:'Comic Sans MS'; font-size:70px; text-decoration:overline;"> Welcome</h1>
+    <h1 style="font-family: 'Comic Sans MS'; font-size:50px;">Fit-Me App </h1>
+</header>
+
+<form action="dologin" name="loginForm" method="post">
+    <p class="fw-lighter text-center p-5 m-4" style="font-family: 'Times New Roman';color:whitesmoke">Fit-Me App uygulamasına hoşgeldiniz. Günde sadece 20 dk Spor yaparak ve sağlıklı beslenerek ideal kilonuza kavuşabilirsiniz. Size özel Yemek listeleri, Spor programı ve Günlük verilerinizi takip edebileceğiniz Personal Traineriniz. Yapacağınız şey çok basit. Sadece uygulamaya giriş yapın ve size özel hazırlanmış içerikleri uygulayın. Sağlıklı bir yaşam için Fit-Me App hep yanınızda.</p>
+
+    <div class="register text-center mt-3 mx-auto" style="width: 400px;">
+
+        <div class="form-floating mb-3" >
+            <input  name="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label  for="floatingInput"> Email Address </label>
+        </div>
+        <div class="form-floating">
+            <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Şifrenizi girin...">
+            <label for="floatingPassword"> Password </label><br>
+
+        </div>
+
+        <div class="info col-12 d-flex flex-row justify-content-center mt-1 mb-5" >
+            <button type="submit" class="btn btn-light mt-3 mb-5" value="login"> Giriş Yap </button>
+        </div>
+    </div>
+    </form>
+
+<
+
+
+<footer class="bg-light text-center text-lg-start " >
+    <div class="text-center p-3" style="background-color:rgba(242,242,242,0.66)">
+        © 2022 Copyright: Sinem Dönmez
+    </div>
+</footer>
+
+<script>
+    "use strict";
+    var formGiris = document.forms["loginForm"];  // form seçimi
+    var email = formGiris.email;   // eposta alanı seçimi
+    var password = formGiris["password"];  // sifre alanı seçimi
+</script>
+
+<script>
+    "use strict";
+    var formGiris = document.forms["loginForm"];  // form seçimi
+    var email = formGiris["email"];  // eposta alanı seçimi
+
+    //alert(email.value);  // eposta alanı value özelliği
+</script>
+
+<script>
+    "use strict";
+    var formGiris = document.forms["loginForm"];  // form seçimi
+    var email = formGiris.email;   // eposta alanı seçimi
+    var password = formGiris["password"];  // sifre alanı seçimi
+
+    formGiris.onsubmit = function() {
+        alert("Şifreniz hatalı ! Tekrar girin.");
+        //alert(email.value); // eposta alanı value özelliği
+       // alert(password.value);  // sifre alanı value özelliği
+    }// onsubmit olayı
+
+</script>
+
+<script>
+    "use strict";
+    var formGiris = document.forms["loginForm"];  // form seçimi
+    var formGiris2 = document.forms("registerForm");
+    var email = formGiris.email;   // eposta alanı seçimi
+    var password = formGiris["password"];  // sifre alanı seçimi
+    var tpassword = formGiris2["tpassword"];
+    formGiris.onsubmit = function() {
+        if (password.value == tpassword.value) {
+
+            if (email.value != "" && password.value != "") {
+                alert("giriş başarılı")  // sifre alanı value özelliği
+            } else {
+                alert("Tüm alanları doldurun !");
+                return false;  // form gönderimini iptal et
+            }
+        }
+    }
+</script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+</body>
+</html>

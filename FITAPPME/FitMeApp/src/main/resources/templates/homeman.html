@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitMeMan</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body style="background: linear-gradient( rgb(47, 139, 47),paleturquoise);">
+<header class="text-center p-5 text-white" style="background-color:rgb(47, 139, 47);">
+  <h1 style="font-family:'Comic Sans MS'; font-size:70px; color:#4747d1; text-decoration:overline;"> Hello <span th:text="${musteri.namesurname}"></span></h1>
+  <h1 style="font-family:'Comic Sans MS'; font-size:50px; color:lightblue;"> Your Personal Trainer</h1>
+</header>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- The Close Button -->
+  <span class="close">&times;</span>
+
+  <!-- Modal Content (The Image) -->
+  <img class="modal-content" id="img01">
+
+  <!-- Modal Caption (Image Text) -->
+  <div id="caption"></div>
+</div>
+<form >
+
+  <p class="fw-bolder text-center p-2 m-4" style="font-family:'Comic Sans MS';"> SAĞLIKLI YEMEK LİSTENİZ </p>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4 m-5">
+    <div class="col">
+      <div class="card h-100 " style="background-color:lightblue">
+        <img src="/imgman/kahvaltıı.webp" class="myimg card-img-top p-3 rounded">
+        <div class="card-body">
+          <h5 class="card-title" style="font-family: 'Times New Roman';color:dimgray"> Kahvaltı </h5>
+          <p class="card-text" style="font-family: 'Times New Roman';color:dimgray"> Smootie bowl , yoğurt ve çileği blenderda çekip üstüne muz,chia,badem ve blueberry ile dizebilirsiniz.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100" style="background-color:lightblue">
+        <img src="/imgman/öğlew.webp" class="myimg card-img-top p-3 rounded"  >
+        <div class="card-body">
+          <h5 class="card-title" style="font-family: 'Times New Roman';color:dimgray"> Öğle Yemeği </h5>
+          <p class="card-text" style="font-family: 'Times New Roman';color:dimgray"> Tavuk yemekleri en çok tercih edilen sporcu yemekleri arasında pek bir yükseklerde. Pişirmesi çok zahmetli olmayan, lezzeti birkaç püf nokta ile desteklenen tavuk yemekleri protein miktarinin fazlalığı ile yanında salata ile güzel bir öğle yemeği olur. </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100" style="background-color:lightblue">
+
+        <img src="/imgman/akşame.webp" class="myimg card-img-top p-3 rounded" />
+
+        <div class="card-body">
+          <h5 class="card-title" style="font-family: 'Times New Roman';color:dimgray"> Akşam Yemeği </h5>
+          <p class="card-text" style="font-family: 'Times New Roman';color:dimgray"> Sporun vazgeçilmezi protein ile akşam yemeğinde köfteli patatesli. yanında 1 dilim ekmek ve 1 bardak ayran ile. </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="fw-bolder text-center p-2 mx-4"style="font-family:'Comic Sans MS';"> SİZE ÖZEL EGZERSİZLERİNİZ </p>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4 m-5">
+    <div class="col">
+      <div class="card h-100" style="background-color:lightblue">
+        <img src="/imgman/espor.jpeg" class="myimg card-img-top p-3 rounded" >
+        <div class="card-body">
+          <h5 class="card-title" style="font-family: 'Times New Roman';color:dimgray"> Jump Squat Hareketi </h5>
+          <p class="card-text" style="font-family: 'Times New Roman';color:dimgray">15 tekrarla 3 set halinde tamamlayınız. </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100" style="background-color:lightblue">
+        <img src="/imgman/espor2.jpeg" class="myimg card-img-top p-3 rounded" >
+        <div class="card-body">
+          <h5 class="card-title" style="font-family: 'Times New Roman';color:dimgray"> Forward Lunge Hareketi </h5>
+          <p class="card-text" style="font-family: 'Times New Roman';color:dimgray"> 15 tekrarla 3 set halinde tamamlayınız. </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100" style="background-color:lightblue">
+        <img src="/imgman/espor3.jpeg" class="myimg card-img-top p-3 rounded" >
+        <div class="card-body">
+          <h5 class="card-title" style="font-family: 'Times New Roman';color:dimgray"> Deadbug Hareketi </h5>
+          <p class="card-text" style="font-family: 'Times New Roman';color:dimgray">15 tekrarla 3 set halinde tamamlayınız. </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="fw-bolder text-center p-2 mx-4" style=" font-family:'Comic Sans MS';"> KİŞİSEL VERİLERİNİZ </p>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4 m-5">
+    <div class="col">
+      <div class="card h-100" style="background-color:lightblue">
+        <img src="/imgman/adım.jpeg" class="myimg card-img-top p-3 rounded" >
+        <div class="card-body">
+          <h5 class="card-title" style="font-family: 'Times New Roman';color:dimgray">Adım Sayar</h5>
+          <p class="card-text" style="font-family: 'Times New Roman';color:dimgray">Günlük tamamlamanız gereken adım sayısına ulaştınız.  </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100" style="background-color:lightblue">
+        <img src="/imgman/sue.png" class="myimg card-img-top p-3 rounded" >
+        <div class="card-body">
+          <h5 class="card-title" style="font-family: 'Times New Roman';color:dimgray">Su hatırlatıcı</h5>
+          <p class="card-text" style="font-family: 'Times New Roman';color:dimgray">İçmeniz gereken toplam su miktarı 2500ml. Bugün 1400ml su içtiniz.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100" style="background-color:lightblue">
+        <img src="/imgman/calori.jpeg" class="myimg card-img-top p-3 rounded" >
+        <div class="card-body">
+          <h5 class="card-title" style="font-family: 'Times New Roman';color:dimgray"> Günlük kalori miktarı  </h5>
+          <p class="card-text" style="font-family: 'Times New Roman';color:dimgray">Almanız gereken kalori miktarı 1900kcal. Sizin bugün aldığınız miktar 1250kcal.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</form>
+
+<footer class="bg-light text-center text-lg-start " >
+  <div class="text-center p-3" style="background-color:rgba(242,242,242,0.66)">>
+    © 2022 Copyright: Sinem Dönmez
+  </div>
+</footer>
+<script>
+  // Get the modal
+  var modal = document.getElementById("myModal");
+
+  // Get the image and insert it inside the modal - use its "alt" text as a caption
+  var img = document.querySelectorAll(".myimg");
+  var modalImg = document.getElementById("img01");
+  var captionText = document.getElementById("caption");
+  img.forEach(x=>{
+    x.onclick = function(){
+      modal.style.display = "block";
+      modalImg.src = x.src;
+    }})
+
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+</body>
+</html>

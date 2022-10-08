@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RegisterPage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+</head>
+<body>
+<body style="background-color:rgba(47, 139, 47, 0.595) ;">
+<header class="text-center p-5 text-white" style="background-color:rgb(47, 139, 47);">
+    <h1 style="font-size:70px; text-decoration:overline;"> Kayıt Olmak İçin</h1>
+    <h1 style="font-size:30px;"> Lütfen Aşağıdaki Bilgileri Doldurun </h1>
+</header>
+
+<div class="register text-center mt-3 mx-auto" style="width: 400px;">
+    <form action="doregister" method="post">
+        <div class="form-floating mb-3">
+            <input type="text " name="namesurname" class="form-control " id="floatingInput" placeholder="isim soyisim girin...">
+            <label for="floatingInput"> Name Surname </label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput"> Email Address </label>
+        </div>
+        <div class="form-floating">
+        <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Şifrenizi girin...">
+        <label for="floatingPassword"> Password </label><br>
+        </div>
+        <label> Bir cinsiyet Seçiniz.. </label>
+        <select class="form-select" name="gender" aria-label="Default select example">
+        <div th:each="gender :${genders}">
+            <option th:text="${gender}" th:value="${gender}"></option>
+        </div>
+
+    </select>
+
+        <br><br>
+
+        <div class="info col-12 d-flex flex-row justify-content-center mt-2 mb-2" >
+            <button type="submit" class="btn btn-light mt-3 mb-5" > Kayıt Ol </button>
+        </div>
+    </form>
+
+
+
+
+</div>
+
+<footer class="bg-light text-center text-lg-start " >
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2022 Copyright: Sinem Dönmez
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+
+</body>
+</html>

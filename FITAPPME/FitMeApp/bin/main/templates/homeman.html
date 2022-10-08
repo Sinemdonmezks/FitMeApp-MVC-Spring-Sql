@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitMeMan</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body style="background-color:rgba(47, 139, 47, 0.595) ;">
+<header class="text-center p-5 text-white" style="background-color:rgb(47, 139, 47);">
+  <h1 style="font-size:70px; color:lightblue; text-decoration:overline;"> Hello <span th:text="${musteri.namesurname}"></span></h1>
+  <h1 style="font-size:50px; color:lightblue;"> Your Personal Trainer</h1>
+</header>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- The Close Button -->
+  <span class="close">&times;</span>
+
+  <!-- Modal Content (The Image) -->
+  <img class="modal-content" id="img01">
+
+  <!-- Modal Caption (Image Text) -->
+  <div id="caption"></div>
+</div>
+<form >
+
+  <p class="fw-bolder text-center p-2 m-4"> SAĞLIKLI YEMEK LİSTENİZ </p>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4 m-5">
+    <div class="col">
+      <div class="card h-100 " style="background-color:lightblue">
+        <img src="/imgman/kahvaltıı.webp" class="myimg card-img-top ">
+        <div class="card-body">
+          <h5 class="card-title"> Kahvaltı </h5>
+          <p class="card-text"> İki ince dilim ekmek arasına domates peynir ve marul. Yanında bol salatalık yiyebilir ve büyük bir bardak kefir içebilirsiniz.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100" style="background-color:lightblue">
+        <img src="/imgman/öğlew.webp" class="myimg card-img-top"  >
+        <div class="card-body">
+          <h5 class="card-title"> Öğle Yemeği </h5>
+          <p class="card-text"> Kabak graten, diğer graten sebzelerden farklı olarak beşemal sosuyla çok daha doyurucu ve lezzetli bir tarif. Peynir ve beşamel sos birleşince, yaz-kış afiyetle tüketmelik efsane bir lezzete dönüşüyor.  </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100" style="background-color:lightblue">
+
+        <img src="/imgman/akşame.webp" class="myimg card-img-top" />
+
+        <div class="card-body">
+          <h5 class="card-title"> Akşam Yemeği </h5>
+          <p class="card-text"> Tavuk yemekleri en çok tercih edilen sporcu yemekleri arasında pek bir yükseklerde. Pişirmesi çok zahmetli olmayan, lezzeti birkaç püf nokta ile desteklenen tavuk yemekleri protein miktarinin fazlalığı ile yanında salata ile güzel bir akşam yemeği olur. </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="fw-bolder text-center p-2 mx-4"> SİZE ÖZEL EGZERSİZLERİNİZ </p>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4 m-5">
+    <div class="col">
+      <div class="card h-100" style="background-color:lightblue">
+        <img src="/imgman/espor.jpeg" class="myimg card-img-top" >
+        <div class="card-body">
+          <h5 class="card-title"> Şınav Hareketi </h5>
+          <p class="card-text">15 tekrarla 3 set halinde tamamlayınız. </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100" style="background-color:lightblue">
+        <img src="/imgman/espor2.jpeg" class="myimg card-img-top" >
+        <div class="card-body">
+          <h5 class="card-title"> Mekik Hareketi </h5>
+          <p class="card-text"> 15 tekrarla 3 set halinde tamamlayınız. </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100" style="background-color:lightblue">
+        <img src="/imgman/espor3.jpeg" class="myimg card-img-top" >
+        <div class="card-body">
+          <h5 class="card-title"> Squat Hareketi </h5>
+          <p class="card-text">15 tekrarla 3 set halinde tamamlayınız. </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="fw-bolder text-center p-2 mx-4"> KİŞİSEL VERİLERİNİZ </p>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4 m-5">
+    <div class="col">
+      <div class="card h-100" style="background-color:lightblue">
+        <img src="/imgman/adım.jpeg" class="myimg card-img-top" >
+        <div class="card-body">
+          <h5 class="card-title">Adım Sayar</h5>
+          <p class="card-text">Günlük tamamlamanız gereken adım sayısına ulaştınız.  </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100" style="background-color:lightblue">
+        <img src="/imgman/sue.png" class="myimg card-img-top" >
+        <div class="card-body">
+          <h5 class="card-title">Su hatırlatıcı</h5>
+          <p class="card-text">İçmeniz gereken toplam su miktarı 2500ml. Bugün 1400ml su içtiniz.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100" style="background-color:lightblue">
+        <img src="/imgman/calori.jpeg" class="myimg card-img-top" >
+        <div class="card-body">
+          <h5 class="card-title"> Günlük kalori miktarı  </h5>
+          <p class="card-text">Almanız gereken kalori miktarı 1900kcal. Sizin bugün aldığınız miktar 1250kcal.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</form>
+
+<footer class="bg-light text-center text-lg-start " >
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2022 Copyright: Sinem Dönmez
+  </div>
+</footer>
+<script>
+  // Get the modal
+  var modal = document.getElementById("myModal");
+
+  // Get the image and insert it inside the modal - use its "alt" text as a caption
+  var img = document.querySelectorAll(".myimg");
+  var modalImg = document.getElementById("img01");
+  var captionText = document.getElementById("caption");
+  img.forEach(x=>{
+    x.onclick = function(){
+      modal.style.display = "block";
+      modalImg.src = x.src;
+    }})
+
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+</body>
+</html>
